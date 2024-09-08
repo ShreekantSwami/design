@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hello there!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat Alternates";
+      transition: 0.2s ease-in-out;
+      scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      cursor: url("./assets/cursor.svg"), auto !important;
+    }
+    .texts-faint {
+      color: #666668;
+    }
+    .texts-bold {
+      color: #d9f3fe;
+    }
+
+    .bg-bold {
+      background: #d9f3fe;
+    }
+    .bg-faint {
+      background: #666668;
+    }
+    .animate-spin {
+      animation: spin 2s linear infinite !important;
+    }
+    .card {
+      background-color: #fff;
+      color: #666668;
+      width: 100%;
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: 0.2s ease;
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    summary {
+      position: relative;
+      padding-left: 20px; /* Adjust space for the custom marker */
+    }
+
+    summary::before {
+      content: "⏺"; /* Use a Unicode character or custom text */
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%); /* Center the marker vertically */
+      font-size: 1.2em; /* Adjust size as needed */
+      transition: transform 0.3s ease; /* Add transition effect */
+    }
+
+    /* Rotate the marker when the details are open */
+    details[open] summary::before {
+      content: "⏺";
+    }
+  </style>
+  <body class="bg-[#121213] w-full h-screen">
+    <div
+      class="w-full h-full flex flex-col justify-center items-center px-2 py-3"
+    >
+      <div
+        class="texts-faint w-full h-[5%] bg-zinc-400 flex items-center font-bold pl-4 rounded-md text-xl"
+      >
+        Shreekant. Deepak. Swami.
+      </div>
+      <div
+        class="w-full h-[93%] flex justify-between items-center rounded-md overflow-hidden"
+      >
+        <div
+          class="flex flex-col justify-evenly items-center w-[79.5%] h-full rounded-md overflow-hidden"
+        >
+          <div
+            class="texts-bold w-full h-[49.5%] flex justify-between items-center rounded-md overflow-hidden"
+          >
+            <div
+              class="bg-zinc-200 w-[64.5%] h-[98%] rounded-md overflow-hidden flex justify-center items-center"
+            >
+              <p class="texts-faint text-5xl text-center">
+                Passionate <strong>developer</strong> dedicated to turning
+                ideas&nbsp;💡 into stunning digital experiences. <br />
+                <span class="text-xl"
+                  >Ready to make magic happen with you!</span
+                >
+              </p>
+            </div>
+            <div
+              class="bg-zinc-400 w-[35%] h-[98%] rounded-md overflow-hidden bg-[url('./assets/profile.jpg')] bg-cover bg-no-repeat"
+            ></div>
+          </div>
+          <div
+            class="texts-bold w-full h-[49.5%] flex justify-between items-center rounded-md overflow-hidden"
+          >
+            <div
+              class="bg-zinc-200 w-[54.5%] h-full rounded-md overflow-hidden relative flex justify-center items-center px-3 text-justify texts-bold font-bold text-2xl"
+            >
+              <div
+                class="absolute top-[25px] left-[25px] size-[135px] animate-spin duration-700"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
+                  <path
+                    fill="none"
+                    stroke="#666668"
+                    stroke-width="15"
+                    stroke-linecap="round"
+                    stroke-dasharray="300 385"
+                    stroke-dashoffset="0"
+                    d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      calcMode="spline"
+                      dur="2"
+                      values="685;-685"
+                      keySplines="0 0 1 1"
+                      repeatCount="indefinite"
+                    ></animate>
+                  </path>
+                </svg>
+              </div>
+              <!-- <img
+                src="./assets/loading.svg"
+                alt="Loader"
+                class="absolute top-[25px] left-[25px] size-[45px] animate-spin duration-700"
+              /> -->
+              <p class="text-3xl absolute bottom-10 px-5 texts-faint">
+                Specializing in the
+                <strong class="text-green-700">MERN </strong>stack, I build
+                dynamic, full-stack applications that are optimized for
+                <strong>performance</strong> and <strong>accessibility</strong>.
+                Committed to delivering solutions that work flawlessly for users
+                across the <strong>globe</strong>.
+              </p>
+            </div>
+            <a href="#contactMe" class="w-[45%] h-full">
+              <div
+                class="bg-zinc-400 w-full h-full rounded-md overflow-hidden relative texts-bold"
+              >
+                <div class="absolute top-[15px] right-[15px]">
+                  <svg
+                    width="5em"
+                    height="5em"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="absolute bottom-10 left-10 text-6xl font-bold texts-bold"
+                >
+                  Contact Me
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col justify-evenly items-center w-[20%] h-full">
+          <div
+            class="texts-bold w-full h-[calc(98%-40px)] bg-zinc-300 rounded-md overflow-hidden px-2 py-3"
+          >
+            <div class="px-3 py-2 w-full h-full rounded-md space-y-3">
+              <div class="card">
+                <details>
+                  <summary>FoodWagon</summary>
+                  <div class="text-sm pl-4">
+                    <p>JavaTpoint is a popular tutorial website.</p>
+                    <p>
+                      You can learn various tutorials on JavaTpoint such as
+                      HTML, CSS, JavaScript, Java, Android.
+                    </p>
+                  </div>
+                </details>
+              </div>
+              <div class="card">
+                <details>
+                  <summary>FoodWagon</summary>
+                  <div class="text-sm pl-4">
+                    <p>JavaTpoint is a popular tutorial website.</p>
+                    <p>
+                      You can learn various tutorials on JavaTpoint such as
+                      HTML, CSS, JavaScript, Java, Android.
+                    </p>
+                  </div>
+                </details>
+              </div>
+              <div class="card">
+                <details>
+                  <summary>FoodWagon</summary>
+                  <div class="text-sm pl-4">
+                    <p>JavaTpoint is a popular tutorial website.</p>
+                    <p>
+                      You can learn various tutorials on JavaTpoint such as
+                      HTML, CSS, JavaScript, Java, Android.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div
+            class="texts-bold w-full h-[40px] bg-zinc-300 rounded-md overflow-hidden"
+          >
+            Bottom
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
